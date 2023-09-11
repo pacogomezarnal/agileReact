@@ -1,4 +1,9 @@
-export default function Header({darkTheme,cambiarTheme}){
+import { useContext } from "react";
+import { ThemeContext } from "../App";
+
+
+export default function Header(){
+    const {darkTheme,cambiarDarkTheme} = useContext(ThemeContext);
     return(
         <nav 
         className="navbar fixed-top bg-body-secondary"
@@ -10,7 +15,7 @@ export default function Header({darkTheme,cambiarTheme}){
                     type="checkbox" role="switch" 
                     id="flexSwitchCheckDefault" 
                     checked={darkTheme===true}
-                    onChange={()=>{cambiarTheme();}}/>
+                    onChange={()=>{cambiarDarkTheme();}}/>
                     <label className={darkTheme?"form-check-label text-light":"form-check-label"} for="flexSwitchCheckDefault">Oscuro</label>
                 </div>
             </div>

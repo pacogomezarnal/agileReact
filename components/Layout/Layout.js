@@ -3,11 +3,12 @@ import Footer from "./Footer";
 
 
 export default function Layout(props){
+
     return(
         <div>
-            <Header cambiarTheme={props.cambiarTheme} darkTheme={props.darkTheme}></Header>
+            <Header></Header>
             {props.children}
-            <Footer darkTheme={props.darkTheme}></Footer>
+            <Footer></Footer>
         </div>
     );
 }
